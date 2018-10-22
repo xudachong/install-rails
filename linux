@@ -14,35 +14,35 @@ if [ ! -f "$HOME/.bashrc" ]; then
 fi
 
 log_info "Updating Packages ..."
-  sudo apt-get update
+  sudo yum update
 
 log_info "Installing Git ..."
-  sudo apt-get -y install git
+  sudo yum -y install git
 
 log_info "Installing build essentials ..."
-  sudo apt-get -y install build-essential
+  sudo yum -y install build-essential
 
 log_info "Installing libraries for common gem dependencies ..."
-  sudo apt-get -y install libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev libssl-dev zlib1g-dev libsnappy-dev
+  sudo yum -y install libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev libssl-dev zlib1g-dev libsnappy-dev
 
 log_info "Installing sqlite3 ..."
- sudo apt-get -y install libsqlite3-dev sqlite3
+ sudo yum -y install libsqlite3-dev sqlite3
 
 log_info "Installing Postgres ..."
-  sudo apt-get -y install postgresql postgresql-server-dev-all postgresql-contrib libpq-dev
+  sudo yum -y install postgresql postgresql-server-dev-all postgresql-contrib libpq-dev
 
 log_info "Installing Redis ..."
-  sudo apt-get -y install redis-server
+  sudo yum -y install redis-server
 
 log_info "Installing curl ..."
-  sudo apt-get -y install curl
+  sudo yum -y install curl
 
 log_info "Installing ImageMagick ..."
-  sudo apt-get -y install imagemagick
+  sudo yum -y install imagemagick
 
 log_info "Installing image utilities ..."
-  sudo apt-get -y install advancecomp gifsicle jpegoptim libjpeg-progs optipng pngcrush pngquant
-  sudo apt-get -y install jhead
+  sudo yum -y install advancecomp gifsicle jpegoptim libjpeg-progs optipng pngcrush pngquant
+  sudo yum -y install jhead
 
 if [[ ! -d "$HOME/.rbenv" ]]; then
   log_info "Installing rbenv ..."
@@ -85,5 +85,5 @@ log_info "Installing Mailcatcher ..."
 
 log_info "Installing Node.js ..."
   curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-  sudo apt-get install -y nodejs
+  sudo yum install -y nodejs
   sudo npm install -g svgo
